@@ -1,17 +1,14 @@
 Library Demo
 
 
-Objective
-
+Objective  
 Learn a new 3rd-party library and develop a demo within your peer group to teach the rest of the class.
 
-
-Skills
-
-Reading documentation.
-Understanding conventions within the Javascript community.
-Resolving ambiguities.
-Knowing how libraries fit together into a larger system.
+Skills  
+Reading documentation.  
+Understanding conventions within the Javascript community.  
+Resolving ambiguities.  
+Knowing how libraries fit together into a larger system.  
 
 
 Resources
