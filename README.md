@@ -16,11 +16,11 @@ Knowing how libraries fit together into a larger system.
 
 Resources
 
-1) http://microjs.com/#
-2) https://nodejsmodules.org/
-3) https://www.npmjs.org/
-4) http://bower.io/search/
-5) https://github.com/trending?l=javascript&since=monthly
+1) http://microjs.com/#  
+2) https://nodejsmodules.org/  
+3) https://www.npmjs.org/  
+4) http://bower.io/search/  
+5) https://github.com/trending?l=javascript&since=monthly  
 
 
 Requirements
