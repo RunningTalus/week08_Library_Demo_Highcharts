@@ -1,31 +1,21 @@
 Library Demo
 
-
 Objective
-
 Learn a new 3rd-party library and develop a demo within your peer group to teach the rest of the class.
 
-
 Skills
-
 Reading documentation.
 Understanding conventions within the Javascript community.
 Resolving ambiguities.
 Knowing how libraries fit together into a larger system.
 
-
 Resources
 
 1) http://microjs.com/#
-
 2) https://nodejsmodules.org/
-
 3) https://www.npmjs.org/
-
 4) http://bower.io/search/
-
 5) https://github.com/trending?l=javascript&since=monthly
-
 
 Requirements
 
