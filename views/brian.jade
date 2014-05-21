@@ -1,4 +1,14 @@
 extends layout
 
 block content
-	h1 Test for bootstrap install!
+  .container
+    .row
+      .col-xs-12.text-center
+        h1 New Orleans Population Data
+    .row
+      .col-xs-6.col-xs-offset-3
+        #the-chart
+
+
+block scripts
+  script(src='./js/brian.js')
