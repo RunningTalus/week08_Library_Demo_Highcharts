@@ -26,3 +26,12 @@ app.get('/brian', function(req,res){
 var server = app.listen(6975, function() {
 	console.log('Express server listening on port ' + server.address().port);
 });
+
+
+// to push the changes to your branch
+// git push origin [branch name]
+
+// when you complete a feature, merge (push) to master
+// git merge [branch name] -- to 
+// after it's merged to master
+// git push -u origin master

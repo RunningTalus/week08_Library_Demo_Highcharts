@@ -11,14 +11,34 @@ html(lang='en')
 	body
 		block content
 
-		footer.main-footer 
-			ul.center.text-center
-				li.user-li 
-					a(href="/andrew") Andrew
-				li.user-li 
-					a(href="/brian") Brian
-				li.user-li 
-					a(href="/dave") Dave
+		.row.footer
+			.col-xs-4.text-center
+				img.img-circle.no-opacity(src='img/brian.png', alt='Brian Hartz')
+				p.creator-name.no-opacity Brian Hartz
+				a.social-link.no-opacity(href='https://linkedin.com/in/hartzis', target='_blank')
+					i.fa.fa-linkedin-square.fa-2x
+					// LinkedIn
+				a.social-link.no-opacity(href='https://github.com/hartzis', target='_blank')
+					i.fa.fa-github.fa-2x
+					// Github
+			.col-xs-4.columns.text-center
+				img.img-circle.no-opacity(src='img/dave.png', alt='Eunice Kim')
+				p.creator-name.no-opacity Dave May
+				a.social-link.no-opacity(href='https://www.linkedin.com/pub/eunice-yoon-yi-kim/50/733/481', target='_blank', width='160', height='160')
+					i.fa.fa-linkedin-square.fa-2x
+					// LinkedIn
+				a.social-link.no-opacity(href='https://github.com/ekimed', target='_blank')
+					i.fa.fa-github.fa-2x
+					// Github
+			.col-xs-4.columns.text-center
+				img.img-circle.no-opacity(src='img/andrew.png', alt='Andrew Lampert')
+				p.creator-name.no-opacity Andrew Lampert
+				a.social-link.no-opacity(href='https://www.linkedin.com/in/lamperta', target='_blank')
+					i.fa.fa-linkedin-square.fa-2x
+					// LinkedIn
+				a.social-link.no-opacity(href='https://github.com/AndyLampert', target='_blank')
+					i.fa.fa-github.fa-2x
+					// Github
 
 		//- script(src='//code.jquery.com/jquery-2.1.1.min.js')
 		script(src='./js/jquery-2.1.1.js')
@@ -26,4 +46,5 @@ html(lang='en')
 		script(src='./js/bootstrap.min.js')
 		script(src='//cdnjs.cloudflare.com/ajax/libs/highcharts/4.0.1/highcharts.js')
 		script(src='./js/main.js')
+		script(type="text/javascript", src="js/andrew.js")
 		block scripts
