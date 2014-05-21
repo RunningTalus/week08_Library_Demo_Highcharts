@@ -1,0 +1,8 @@
+.main-footer {
+	position: fixed;
+	bottom: 0;
+}
+
+.user-li {
+	display: inline-block;
+}

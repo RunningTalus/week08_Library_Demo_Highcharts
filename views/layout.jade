@@ -6,17 +6,18 @@ html(lang='en')
 		//- link(rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css")
 		link(rel="stylesheet" href="/css/bootstrap.min.css")
 		link(rel="stylesheet" href="/css/main.css")
+		block css
 
 	body
 		block content
 
 		footer.main-footer 
-			ul
-				li 
+			ul.center.text-center
+				li.user-li 
 					a(href="/andrew") Andrew
-				li 
+				li.user-li 
 					a(href="/brian") Brian
-				li 
+				li.user-li 
 					a(href="/dave") Dave
 
 		//- script(src='//code.jquery.com/jquery-2.1.1.min.js')
