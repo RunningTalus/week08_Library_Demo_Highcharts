@@ -4,8 +4,8 @@ $(function() {
         // console.log("data", data);
         // doing the for loop outside of the series
         var employerData = [];
-        for (var i = 0; i < data.length; i++) {
-            employerData.push([data[i].employer, data[i].percentage]);
+        for (var i = 0; i < data.employerData.length; i++) {
+            employerData.push([data.employerData[i].employer, data.employerData[i].percentage]);
         };
         $('#top-employers-data').highcharts({
             chart: {
@@ -37,20 +37,6 @@ $(function() {
                 type: 'pie',
                 name: 'Top Employeers',
                 data: employerData
-
-                    // [data.employer, data.percentage * 100]
-                    // [data.employer, data.percentage * 100],
-                    // ['State of Missouri',   67.8],
-                    // ['Scholastic',       5.5]
-                    // ['Capital Regional Medical Center',    5.4],
-                    // ['St. Mary\'s Health Center',     4.4],
-                    // ['Jefferson City Public School District',   4.1],
-                    // ['Wal-Mart', 2.9],
-                    // ['Central Bank', 2.8],
-                    // ['ABB Inc.', 2.8],
-                    // ['Jefferson City Medical Group', 2.1],
-                    // ['RR Donnelley', 1.9]
-                
             }],
         });
 
@@ -63,7 +49,7 @@ $(function() {
                         text: 'Historical Population Change'
                     },
                     subtitle: {
-                        text: 'Source: wikipedia.org'
+                        text: ''
                     },
                     xAxis: {
                         categories: [
@@ -86,12 +72,19 @@ $(function() {
                             '2010'
                         ]
                     },
-                    yAxis: {
+                    yAxis: [{
                         min: 0,
                         title: {
                             text: 'Population'
                         }
                     },
+                    {
+                        min: 0,
+                        title: {
+                            text: 'Percentage Increase'
+                        },
+                        opposite: true
+                    }],
                     tooltip: {
                         headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
                         pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
@@ -109,13 +102,17 @@ $(function() {
 
                     // population data 
                     series: [{
+                        yAxis: 0,
                         name: 'Population ',
                         data: [3082, 4420, 5271, 6742, 9664, 11850, 14490, 21596, 24268, 25099, 28228, 32407, 33619, 35481, 39636, 43079]
                     },{
+                        yAxis: 1,
+                        type: 'spline',
                         name: 'Percentage Increase',
-                        data: [0, 43.4, 19.3, 27.9, 43.4, 22.6, 22.3, 49, 12.4, 3.4, 12.5, 14.8, 3.7, 5.5, 11.7, 8.7].map(function(perc){
-                            return perc * 1000;
-                        })
+                        data: [0, 43.4, 19.3, 27.9, 43.4, 22.6, 22.3, 49, 12.4, 3.4, 12.5, 14.8, 3.7, 5.5, 11.7, 8.7]
+                        // .map(function(perc){
+                        //     return perc * 1000;
+                        // })
                     }]
                 });
 
@@ -128,7 +125,7 @@ $(function() {
                 text: 'Average min/max temperatures (C°)'
             },
             subtitle: {
-                text: 'Source: WorldClimate.com'
+                text: ''
             },
             xAxis: {
                 categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
