@@ -1,33 +1,43 @@
-$('.andrew-graph').addClass();
-$('#top-employers-data').css("visibility","visible");
+// find all andrew-graphs, add visibily : hidden
+// then on andrew-graph.active -> to visible
+// $('.andrew-graph').addClass('add-vis-hidden');
+// $('.andrew-graph').css('visibility','visible');
+
 $(function() {
     // IDs for the rendered graphs
-// #top-employers-data
-// #population-data
-// #climate-data
-   
-   // function call to hide to easily hide all the graphs
-   var hideAll = function(){
-       $('.andrew-graph').hide();
-   };
-   // hideAll();
+    // #top-employers-data
+    // #population-data
+    // #climate-data
 
-    // hide all the graphs on page load
-    // when you click on graph 1, show that graph
-    $('.graph-1').on('click',function(){
-        hideAll();
-        $('#top-employers-data').show();
+    // change to visible hidden
+    var showGraph = function(currentID){
+        // ???? 
+        $(currentID).addClass('active').siblings().removeClass('active');
+    }
+    showGraph("#employers");
+
+    $('.graph-link').on('click', function(e){
+        e.preventDefault();
+        showGraph( $(this).attr('href') );
     })
+
+    // $('.graph-1').on('click',function(){
+    //     $('.andrew-graph').hide();
+    //     $('#top-employers-data').closest('.andrew-graph').show();
+    //     $('#top-employers-data').show();
+    // })
     
-    $('.graph-2').on('click',function(){  
-        hideAll();
-        $('#population-data').show();
-    });
+    // $('.graph-2').on('click',function(){  
+    //     $('.andrew-graph').hide();
+    //     $('#population-data').closest('.andrew-graph').show();
+    //     $('#population-data').show();
+    // });
 
-    $('.graph-3').on('click',function(){
-        hideAll();
-        $('#climate-data').show();
-    })
+    // $('.graph-3').on('click',function(){
+    //     $('.andrew-graph').hide();
+    //     $('#climate-data').closest('.andrew-graph').show();
+    //     $('#climate-data').show();
+    // })
 
     // top employers function
     $.getJSON('/api/data', function(data){
@@ -176,9 +186,9 @@ $(function() {
         });
 
         // custom carousel
-        $('#myCarousel').carousel({
-            interval:   4000
-        });
+        // $('#myCarousel').carousel({
+        //     interval:   4000
+        // });
         
         var clickEvent = false;
         $('#myCarousel').on('click', '.nav a', function() {

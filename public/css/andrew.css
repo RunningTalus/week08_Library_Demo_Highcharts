@@ -6,20 +6,28 @@
 .user-li {
 	display: inline-block;
 }
+#myCarousel {
+	height: 400px;
+}
+.andrew-graph {
+	visibility: hidden;
+	position: absolute;
+	width: 100%;
+}
 
-.visible {
-	
+.andrew-graph.active {
+	visibility: visible;
 }
 
 /*default styles for all graphs*/
-.andrew-graph {
-	visibility: hidden;
-}
+/*.hide-custom {*/
+	/*visibility: hidden;*/
+/*}*/
 
 /*overriding styles*/
-.andrew-graph.visible {
-	visibility: visible;
-}
+/*.andrew-graph.visible {*/
+	/*visibility: visible;*/
+/*}*/
 
 
 /*from bootsnip*/
