@@ -1,8 +1,13 @@
-{
-	"employerData": [
+var mongoose = require('mongoose');
+var Employer = mongoose.model('employer', {
+	"employer": String,
+	"percentage": Number
+});
+
+var employer = [
 	{
 		"employer": "State of Missouri",
-		"percentage": 67.8431664865268
+		"percentage": 67.8
 	},
 	{
 		"employer": "Scholastic",
@@ -39,73 +44,21 @@
 	{
 		"employer": "RR Donnelley",
 		"percentage": 1.9
-	}],
-	"populationData": [
-		3082,
-		4420,
-		5271,
-		6742,
-		9664,
-		11850,
-		14490,
-		21596,
-		24268,
-		25099,
-		28228,
-		32407,
-		33619,
-		35481,
-		39636,
-		43079
-	], 
-	"percentData": [
-		 0,
-		43.4,
-		19.3,
-		27.9,
-		43.4,
-		22.6,
-		22.3,
-		49,
-		12.4,
-		3.4,
-		12.5,
-		14.8,
-		3.7,
-		5.5,
-		11.7,
-		8.7
-	],
-	"tempData": {
-		"min": [
-			-6.7,
-			-4.7,
-			0.1,
-			6.2,
-			11.7,
-			17.1,
-			19.6,
-			18.6,
-			13.3,
-			6.7,
-			1.1,
-			-5
-		],
-		"max": [
-			4.4,
-			7.4,
-			13.1,
-			19.3,
-			23.9,
-			28.6,
-			31.3,
-			31,
-			26.6,
-			20.3,
-			13.2,
-			5.8
-		]
 	}
-}
+]
 
+// when the server restarts, checks to see if there are any docs in the db.
+Employer.find({},function(err, docs){
+	// if there are none (docs)
+	if(docs.length === 0) {
+		// then loop through all the objects inside the arrayß
+		for (var i = 0; i < employer.length; i++) {
+			// create a new instance of the model
+			var emp = new Employer(employer[i]);
+			// and save it to the db
+			emp.save();
+		};
+	}
+})
 
+module.exports = Employer;

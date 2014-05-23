@@ -1,3 +1,28 @@
+.footer {
+	position: fixed;
+	bottom: 0;
+}
+
+.user-li {
+	display: inline-block;
+}
+
+.visible {
+	
+}
+
+/*default styles for all graphs*/
+.andrew-graph {
+	visibility: hidden;
+}
+
+/*overriding styles*/
+.andrew-graph.visible {
+	visibility: visible;
+}
+
+
+/*from bootsnip*/
 #container {
 	min-width: 310px; 
 	height: 400px; 
@@ -21,3 +46,5 @@ body {
 .nav-pills>li[data-slide-to="1"].active a { background-color: #e67e22; }
 .nav-pills>li[data-slide-to="2"].active a { background-color: #2980b9; }
 .nav-pills>li[data-slide-to="3"].active a { background-color: #8e44ad; }
+
+

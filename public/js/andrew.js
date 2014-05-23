@@ -1,6 +1,36 @@
+$('.andrew-graph').addClass();
+$('#top-employers-data').css("visibility","visible");
 $(function() {
+    // IDs for the rendered graphs
+// #top-employers-data
+// #population-data
+// #climate-data
+   
+   // function call to hide to easily hide all the graphs
+   var hideAll = function(){
+       $('.andrew-graph').hide();
+   };
+   // hideAll();
+
+    // hide all the graphs on page load
+    // when you click on graph 1, show that graph
+    $('.graph-1').on('click',function(){
+        hideAll();
+        $('#top-employers-data').show();
+    })
+    
+    $('.graph-2').on('click',function(){  
+        hideAll();
+        $('#population-data').show();
+    });
+
+    $('.graph-3').on('click',function(){
+        hideAll();
+        $('#climate-data').show();
+    })
+
     // top employers function
-    $.getJSON('/js/andrew.json', function(data){
+    $.getJSON('/api/data', function(data){
         // console.log("data", data);
         // doing the for loop outside of the series
         var employerData = [];
@@ -44,6 +74,7 @@ $(function() {
         $('#population-data').highcharts({
                     chart: {
                         type: 'column'
+                        // width: '100'
                     },
                     title: {
                         text: 'Historical Population Change'
@@ -52,25 +83,9 @@ $(function() {
                         text: ''
                     },
                     xAxis: {
-                        categories: [
-                            '1860',
-                            '1870',
-                            '1880',
-                            '1890',
-                            '1900',
-                            '1910',
-                            '1920',
-                            '1920',
-                            '1930',
-                            '1940',
-                            '1950',
-                            '1960',
-                            '1970',
-                            '1980',
-                            '1990',
-                            '2000',
-                            '2010'
-                        ]
+                        categories: data.populationData.map(function(item){
+                                return item.date
+                        })
                     },
                     yAxis: [{
                         min: 0,
@@ -88,7 +103,7 @@ $(function() {
                     tooltip: {
                         headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
                         pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                            '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                            '<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
                         footerFormat: '</table>',
                         shared: true,
                         useHTML: true
@@ -104,12 +119,16 @@ $(function() {
                     series: [{
                         yAxis: 0,
                         name: 'Population ',
-                        data: [3082, 4420, 5271, 6742, 9664, 11850, 14490, 21596, 24268, 25099, 28228, 32407, 33619, 35481, 39636, 43079]
+                        data: data.populationData.map(function(item){
+                                return item.populationData
+                        })
                     },{
                         yAxis: 1,
                         type: 'spline',
-                        name: 'Percentage Increase',
-                        data: [0, 43.4, 19.3, 27.9, 43.4, 22.6, 22.3, 49, 12.4, 3.4, 12.5, 14.8, 3.7, 5.5, 11.7, 8.7]
+                        name: 'Increase % ',
+                        data: data.populationData.map(function(item){
+                                return item.percentData;
+                        })
                         // .map(function(perc){
                         //     return perc * 1000;
                         // })
@@ -145,10 +164,14 @@ $(function() {
             },
             series: [{
                 name: 'Average Low',
-                data: [-6.7, -4.7, .1, 6.2, 11.7, 17.1, 19.6, 18.6, 13.3, 6.7, 1.1, -5 ]
+                data: data.tempData.map(function(item){
+                    return item.min;
+                })
             }, {
                 name: 'Average High',
-                data: [4.4, 7.4, 13.1, 19.3, 23.9, 28.6, 31.3, 31, 26.6, 20.3, 13.2, 5.8]
+                data: data.tempData.map(function(item){
+                    return item.max
+                })
             }]
         });
 
@@ -174,7 +197,6 @@ $(function() {
             }
             clickEvent = false;
         });
-
 
     }).fail(function() {
         // refers to all arguments
