@@ -1,7 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/jc-data');
+var mongoURL = process.env.MONGO_URL || 'mongodb://localhost/jc-data';
+mongoose.connect(mongoURL);
 var Employer = require('./models/employer.js');
 var Population = require('./models/population.js');
 var Temperature = require('./models/temp.js');
@@ -45,7 +46,8 @@ app.get('/brian', function(req,res){
 	res.render('brian');
 });
 
-var server = app.listen(6975, function() {
+var port = process.env.PORT || 6975;
+var server = app.listen(port, function() {
 	console.log('Express server listening on port ' + server.address().port);
 });
 
