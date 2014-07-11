@@ -17,18 +17,28 @@ span {
 	border-radius: 4px;
 }
 
-.made-by-header {
-	top: 10px;
+.splash-screen-copy,
+.creator-name {
+	color: white;
+	text-shadow: 1px 1px black;
+	font-size: 1.4em;
+}
+
+.splash-screen-copy {
 	position: absolute;
-	width: 100%;
+	top: 330px;
+	left: 16%;
 }
 
 .creator-name {
-	color: white;
 	margin-bottom: 0;
-	font-size: 1.4em;
 	padding-top: 10px;
-	text-shadow: 1px 1px black;
+}
+
+.made-by-header {
+	top: 20px;
+	position: absolute;
+	width: 100%;
 }
 
 .fa {
