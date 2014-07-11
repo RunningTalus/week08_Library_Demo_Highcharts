@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 // connecting to mongolabs for the db instead of the db on my machine
-var mongoURL = process.env.MONGO_URL || 'mongodb://localhost/jc-data';
+var mongoURL = process.env.MONGOHQ_URL || 'mongodb://localhost/jc-data';
 mongoose.connect(mongoURL);
 var Employer = require('./models/employer.js');
 var Population = require('./models/population.js');
