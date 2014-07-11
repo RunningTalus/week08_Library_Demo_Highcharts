@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+// connecting to mongolabs for the db instead of the db on my machine
 var mongoURL = process.env.MONGO_URL || 'mongodb://localhost/jc-data';
 mongoose.connect(mongoURL);
 var Employer = require('./models/employer.js');
@@ -46,6 +47,8 @@ app.get('/brian', function(req,res){
 	res.render('brian');
 });
 
+// heroku defines its own port so we cannot specific
+// use whatever heroku defines OR use the local port 
 var port = process.env.PORT || 6975;
 var server = app.listen(port, function() {
 	console.log('Express server listening on port ' + server.address().port);

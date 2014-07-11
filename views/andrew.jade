@@ -1,35 +1,9 @@
 extends layout
 
 block content
-	h1 dub dub dub 
+	h1.text-center Some Data on Jefferson City, Missouri
 
 	.container
-	#myCarousel
-		// Wrapper for slides
-		.carousel-inner
-		.andrew-graph#employers
-			.item.active
-			#top-employers-data
-				.carousel-caption
-					h3
-						| Top Employers in Jefferson City, Missouri
-			// End Item
-		.andrew-graph#population
-			.item
-			#population-data
-				.carousel-caption
-					h3
-						| Headline
-			// End Item
-			//- id is to identify each andrew-graph
-		.andrew-graph#climate 
-			.item
-			#climate-data
-				.carousel-caption
-					h3
-						| Headline
-			// End Item
-		// End Carousel Inner
 	ul.nav.nav-pills.nav-justified
 		li.active(data-target='', data-slide-to='0')
 			a.toggle-graph.graph-1.graph-link(href='#employers')
@@ -39,8 +13,21 @@ block content
 				| Historical Population
 		li(data-target='#', data-slide-to='2')
 			a.toggle-graph.graph-3.graph-link(href='#climate')
-					| Climate Data
-	// End Carousel
+				| Climate Data
+		.andrew-graph#employers
+			.item.active
+			#top-employers-data
+
+		.andrew-graph#population
+			.item
+			#population-data
+				.carousel-caption
+
+			// End Item
+		.andrew-graph#climate 
+			.item
+			#climate-data
+				.carousel-caption
 
 	script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js")
 	script(type="text/javascript", src="js/andrew.js")

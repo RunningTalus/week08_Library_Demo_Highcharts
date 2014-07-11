@@ -1,5 +1,15 @@
-.footer {
-	top: 900px;
-	position: fixed;
+.made-by-header {
+	top: 10px;
+	position: absolute;
 	width: 100%;
+}
+
+body {
+	margin-top: 200px;
+}
+
+span {
+	background-color: rgba(249, 249, 249, 0.85098);
+	padding: 1em;
+	border-radius: 4px;
 }
