@@ -5,11 +5,20 @@
 }
 
 body {
-	margin-top: 200px;
+	margin-top: 280px;
 }
 
 span {
 	background-color: rgba(249, 249, 249, 0.85098);
 	padding: 1em;
 	border-radius: 4px;
+}
+
+.fa {
+	padding: .2em;
+}
+
+.img-circle {
+	border: 2px solid #428bca;
+	padding: 1px;
 }
