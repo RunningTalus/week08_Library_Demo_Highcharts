@@ -1,24 +1,42 @@
-.made-by-header {
-	top: 10px;
-	position: absolute;
-	width: 100%;
+html { 
+  background: url(bg2.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 body {
 	margin-top: 280px;
 }
 
+/* this is for the hard-to-read text that pops up on mouse hover on Andrew's pie chart. Attempted to copy other mouse hover styles */
 span {
 	background-color: rgba(249, 249, 249, 0.85098);
 	padding: 1em;
 	border-radius: 4px;
 }
 
+.made-by-header {
+	top: 10px;
+	position: absolute;
+	width: 100%;
+}
+
+.creator-name {
+	color: white;
+	margin-bottom: 0;
+	font-size: 1.4em;
+	padding-top: 10px;
+	text-shadow: 1px 1px black;
+}
+
 .fa {
 	padding: .2em;
+	color: white;
 }
 
 .img-circle {
-	border: 2px solid #428bca;
+	border: 2px solid white;
 	padding: 1px;
 }
